@@ -1,19 +1,38 @@
+<script>
+  export let level = 2;
+</script>
+
 <style>
   .timeline-container {
     display: flex;
   }
 
-  .timeline-line-container {
-    width: 50px;
-    flex-basis: 50px;
+  .timeline-branch-container {
+    width: 75px;
+    flex-basis: 75px;
     flex-grow: 0;
     flex-shrink: 0;
 
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
 
-    padding-right: 10px;
+    padding-right: 16px;
+
+    margin-left: -30px;
+  }
+
+  .timeline-content-container {
+    flex-grow: 1;
+  }
+
+  .timeline-container {
+    padding-bottom: 16px;
+  }
+
+  .line {
+    flex-grow: 1;
+    border: 2px solid var(--primary-dark);
   }
 
   .circle {
@@ -41,30 +60,15 @@
 
     flex: 0 0 25px;
   }
-
-  .line {
-    border: 2px solid var(--primary-dark);
-    height: 100%;
-    margin-top: -5px;
-  }
-
-  .timeline-content-container {
-    padding-bottom: 16px;
-  }
 </style>
 
-<script>
-  export let level = 0;
-</script>
-
 <div class="timeline-container">
-  <div class="timeline-line-container">
-    <div class={`circle circle-${level}`}></div>
+  <div class="timeline-branch-container">
     <div class="line"></div>
+    <div class={`circle circle-${level}`}></div>
   </div>
 
   <div class="timeline-content-container">
     <slot></slot>
   </div>
 </div>
-

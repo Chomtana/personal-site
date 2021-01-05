@@ -11,19 +11,22 @@
       projects: [
         {
           title: "Kaokonlakao website",
-          description: "A website for kaokonlakao thailand biggest running event started by P'Toon."
+          description: "A website for kaokonlakao thailand biggest running event started by P'Toon.",
+          website: "https://kaokonlakao.com",
         },
         {
           title: "Kaokonlakao volunteer website",
-          description: "A system for volunteer to help checking virtual run submissions whether it is fake or not."
+          description: "A system for volunteer to help checking virtual run submissions whether it is fake or not.",
+          website: "https://volunteer.kaokonlakao.com",
         },
         {
           title: "Tabshier pay",
-          description: "A payment gateway system used by Kaokonlakao, Thailand smiles with you and other organizations."
+          description: "A payment gateway system used by Kaokonlakao, Thailand smiles with you and other organizations.",
         },
         {
           title: "Thailand smiles with you preorder system",
-          description: "A preorder system for buying special limited Leicester City special shirt integrated with Tabshier pay."
+          description: "A preorder system for buying special limited Leicester City special shirt integrated with Tabshier pay.",
+          website: "https://preorder.thailandsmileswithyou.com",
         }
       ]
     },
@@ -43,10 +46,13 @@
 <script>
   import Timeline from "../components/Timeline.svelte"
   import SeeMore from "../components/SeeMore.svelte";
+import TimelineBranch from "../components/TimelineBranch.svelte";
 </script>
 
 <style>
-
+  .projects-container {
+    margin-top: 8px;
+  }
 </style>
 
 
@@ -65,14 +71,24 @@
           <div>{working.from.getFullYear()} - {working.to.getFullYear() == new Date().getFullYear() ? "Now" : working.to.getFullYear()}</div>
           <div>{@html working.note}</div>
 
-          <SeeMore text="See projects from working...">
-            {#each working.projects as project}
-              <div>
-                <div>{project.title}</div>
-                <div>{project.description}</div>
-              </div>
-            {/each}
-          </SeeMore>
+          {#if working.projects && working.projects.length > 0}
+            <div class="projects-container">
+              <SeeMore text="See projects from working...">
+                {#each working.projects as project}
+                  <div>
+                    <TimelineBranch>
+                      {#if project.website}
+                        <div><a href={project.website} target="_blank">{project.title}</a></div>
+                      {:else}
+                        <div>{project.title}</div>
+                      {/if}
+                      <div>{project.description}</div>
+                    </TimelineBranch>
+                  </div>
+                {/each}
+              </SeeMore>
+            </div>
+          {/if}
         </Timeline>
       </div>
     {/each}
