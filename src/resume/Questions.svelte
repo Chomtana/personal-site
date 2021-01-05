@@ -14,7 +14,7 @@
     margin-top: 8px;
     color: white;
 
-    transition: background 0.5s;
+    transition: background 0.25s;
   }
 
   .question-item:hover {

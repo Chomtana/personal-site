@@ -27,7 +27,7 @@
   }
 
   .timeline-container {
-    padding-bottom: 16px;
+    padding-top: 16px;
   }
 
   .line {

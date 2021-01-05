@@ -50,9 +50,7 @@ import TimelineBranch from "../components/TimelineBranch.svelte";
 </script>
 
 <style>
-  .projects-container {
-    margin-top: 8px;
-  }
+
 </style>
 
 
@@ -72,22 +70,20 @@ import TimelineBranch from "../components/TimelineBranch.svelte";
           <div>{@html working.note}</div>
 
           {#if working.projects && working.projects.length > 0}
-            <div class="projects-container">
-              <SeeMore text="See projects from working...">
-                {#each working.projects as project}
-                  <div>
-                    <TimelineBranch>
-                      {#if project.website}
-                        <div><a href={project.website} target="_blank">{project.title}</a></div>
-                      {:else}
-                        <div>{project.title}</div>
-                      {/if}
-                      <div>{project.description}</div>
-                    </TimelineBranch>
-                  </div>
-                {/each}
-              </SeeMore>
-            </div>
+            <SeeMore text="See projects from working..." buttonClass="projects-see-more">
+              {#each working.projects as project}
+                <div>
+                  <TimelineBranch>
+                    {#if project.website}
+                      <div><a href={project.website} target="_blank">{project.title}</a></div>
+                    {:else}
+                      <div>{project.title}</div>
+                    {/if}
+                    <div>{project.description}</div>
+                  </TimelineBranch>
+                </div>
+              {/each}
+            </SeeMore>
           {/if}
         </Timeline>
       </div>

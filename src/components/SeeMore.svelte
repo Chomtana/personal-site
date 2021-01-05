@@ -1,5 +1,5 @@
 <script>
-  export let active = false, text = "See more...";
+  export let active = false, text = "See more...", buttonClass = "";
 
   function makeShow() {
     active = true;
@@ -25,7 +25,7 @@
 </span>
 
 {#if !active}
-  <button class="btn btn-primary" on:click={makeShow}>
+  <button class={`${buttonClass} btn btn-primary`} on:click={makeShow}>
     {text}
   </button>
 {/if}
