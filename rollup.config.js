@@ -34,7 +34,28 @@ export default {
 					hydratable: true
 				},
 				preprocess: {
-					...image()
+					...image({
+						sizes: [64, 128, 400, 800, 1200], // array of sizes for srcset in pixels
+						breakpoints: [0, 0, 375, 768, 1024], // array of screen size breakpoints at which sizes above will be applied
+						placeholder: "blur",
+
+						// Relative paths (starting from `/static`) of folders you'd like to process
+						// from top to bottom. This is a recursive operation, so all images that match
+						// the `processFoldersExtensions` array will be processed. For example, an
+						// array ['folder-a', 'folder-b'] will process all images in
+						// `./static/folder-a/` and `./static/folder-b`.
+						processFolders: ['images'],
+
+						// When true, the folders in the options above will have all subfolders
+						// processed recursively as well.
+						processFoldersRecursively: true,
+
+						// Only files with these extensions will ever be processed when invoking
+						// `processFolders` above.
+						processFoldersExtensions: ["jpeg", "jpg", "png"],
+
+						processFoldersSizes: [64, 128, 400, 800, 1200],
+					})
 				}
 			}),
 			url({

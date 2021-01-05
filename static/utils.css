@@ -1,0 +1,21 @@
+.d-mobile {
+  display: block;
+}
+
+@media (min-width: 650px) {
+  .d-mobile {
+    display: none;
+  }
+}
+
+@media (max-width: 649px) {
+  .d-tablet {
+    display: none;
+  }
+}
+
+@media (max-width: 999px) {
+  .d-com {
+    display: none;
+  }
+}

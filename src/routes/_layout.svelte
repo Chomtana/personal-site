@@ -9,10 +9,6 @@ import RightPane from '../components/RightPane.svelte';
 <style>
 	main {
 		position: relative;
-		max-width: 56em;
-		background-color: white;
-		padding: 2em;
-		margin: 0 auto;
 		box-sizing: border-box;
 	}
 
@@ -25,15 +21,15 @@ import RightPane from '../components/RightPane.svelte';
 	.left-right-pane-container {
 		position: fixed; 
 		top: 0;
-		border-left: 1px solid grey;
-		border-right: 1px solid grey;
+		border-left: 1px solid var(--primary-dark);
+		border-right: 1px solid var(--primary-dark);
 		height: 100%;
 		z-index: 100;
 	}
 </style>
 
 <div class="w-100 h-100" style="display: flex;">
-	<div class="left-right-pane-sizer">
+	<div class="left-right-pane-sizer d-tablet">
 		<div class="left-right-pane-container" style="left: 0;">
 			<LeftPane></LeftPane>
 		</div>
@@ -43,7 +39,7 @@ import RightPane from '../components/RightPane.svelte';
 		<slot></slot>
 	</main>
 
-	<div class="left-right-pane-sizer">
+	<div class="left-right-pane-sizer d-com">
 		<div class="left-right-pane-container" style="right: 0;">
 			<RightPane></RightPane>
 		</div>

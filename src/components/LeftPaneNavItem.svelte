@@ -14,13 +14,18 @@
     padding-bottom: 8px;
     padding-left: 16px;
     padding-right: 16px;
-    border-bottom: 1px solid #D4AC0D;
+    border-bottom: 1px solid var(--primary-light);
     display: flex;
     align-items: center;
+    transition: background 0.25s;
   }
 
   .item-container.active {
     background-color: rgba(255, 255, 255, 0.36);
+  }
+
+  .item-container:not(.active):hover {
+    background-color: rgba(255, 255, 255, 0.2);
   }
 
   .icon-container {

@@ -1,9 +1,9 @@
 <script>
   import Image from "svelte-image";
-import LeftPaneNavItem from "./LeftPaneNavItem.svelte";
-import SocialBar from "./SocialBar.svelte";
+  import LeftPaneNavItem from "./LeftPaneNavItem.svelte";
+  import SocialBar from "./SocialBar.svelte";
 
-  export let activePage;
+  export let activePage, mobileMode;
 </script>
 
 <style>
@@ -49,7 +49,7 @@ import SocialBar from "./SocialBar.svelte";
     margin-left: -16px;
     margin-right: -16px;
     margin-top: 24px;
-    border-top: 1px solid #D4AC0D;
+    border-top: 1px solid var(--primary-light);
   }
 </style>
 
@@ -73,30 +73,32 @@ import SocialBar from "./SocialBar.svelte";
   <SocialBar></SocialBar>
 
   <!-- Navigation pane -->
-  <nav class="nav-container">
-    <LeftPaneNavItem active={true}>
-      <div slot="icon" class="image-circle"><Image src="/images/myself.jpg" width={36} height={36} /></div>
-      <div slot="content">Summary / Search</div>
-    </LeftPaneNavItem>
+  {#if !mobileMode}
+    <nav class="nav-container">
+      <LeftPaneNavItem active={true}>
+        <div slot="icon" class="image-circle"><img src="/g/images/icons/question-64.png" width={36} height={36} alt="Questions" /></div>
+        <div slot="content">Questions</div>
+      </LeftPaneNavItem>
 
-    <LeftPaneNavItem>
-      <div slot="icon"><Image src="/images/icons/work.png" width={36} height={36} /></div>
-      <div slot="content">Work experience</div>
-    </LeftPaneNavItem>
+      <LeftPaneNavItem>
+        <div slot="icon"><img src="/g/images/icons/work-64.png" width={36} height={36} alt="Work" /></div>
+        <div slot="content">Work experience</div>
+      </LeftPaneNavItem>
 
-    <LeftPaneNavItem>
-      <div slot="icon"><Image src="/images/icons/rank.png" width={36} height={36} /></div>
-      <div slot="content">Competitions / Events</div>
-    </LeftPaneNavItem>
+      <LeftPaneNavItem>
+        <div slot="icon"><img src="/g/images/icons/rank-64.png" width={36} height={36} alt="Rank" /></div>
+        <div slot="content">Competitions / Events</div>
+      </LeftPaneNavItem>
 
-    <LeftPaneNavItem>
-      <div slot="icon"><Image src="/images/icons/education.png" width={36} height={36} /></div>
-      <div slot="content">Education</div>
-    </LeftPaneNavItem>
+      <LeftPaneNavItem>
+        <div slot="icon"><img src="/g/images/icons/education-64.png" width={36} height={36} alt="Education" /></div>
+        <div slot="content">Education</div>
+      </LeftPaneNavItem>
 
-    <LeftPaneNavItem>
-      <div slot="icon"><Image src="/images/myself.jpg" width={36} height={36} /></div>
-      <div slot="content">Skills</div>
-    </LeftPaneNavItem>
-  </nav>
+      <LeftPaneNavItem>
+        <div slot="icon"><img src="/g/images/icons/skill-64.png" width={36} height={36} alt="Skills" /></div>
+        <div slot="content">Skills</div>
+      </LeftPaneNavItem>
+    </nav>
+  {/if}
 </div>
