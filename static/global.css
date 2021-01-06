@@ -64,8 +64,13 @@ code {
 }
 
 /* RESUME */
+.timeline-title {
+	font-size: 18px;
+	margin-bottom: 4px;
+}
+
 .topic-block {
-	padding: 24px;
+	padding: 16px;
 }
 
 .yellow-block {

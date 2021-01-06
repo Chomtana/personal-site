@@ -15,11 +15,22 @@
 
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: flex-start;
 
     padding-right: 16px;
 
     margin-left: -30px;
+  }
+
+  .timeline-branch-container-inner {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    width: 100%;
+    flex-grow: 1;
+
+    padding-top: 4px;
   }
 
   .timeline-content-container {
@@ -64,8 +75,10 @@
 
 <div class="timeline-container">
   <div class="timeline-branch-container">
-    <div class="line"></div>
-    <div class={`circle circle-${level}`}></div>
+    <div class="timeline-branch-container-inner">
+      <div class="line"></div>
+      <div class={`circle circle-${level}`}></div>
+    </div>
   </div>
 
   <div class="timeline-content-container">
