@@ -5,6 +5,7 @@
   import Timeline from "../components/Timeline.svelte"
   import WorkingExperience from "./WorkingExperience.svelte";
   import Projects from "./Projects.svelte";
+import Education from "./Education.svelte";
 </script>
 
 <style>
@@ -15,9 +16,9 @@
   <div class="topic-block yellow-block">
     <Questions></Questions>
 
-    <div class="section-block">
+    <div class="section-block" id="working-experience">
       <div class="title-with-icon">
-        <div class="resume-icon"><img src="/g/images/icons/work-64.png" width={28} height={28} alt="Work" /></div>
+        <div class="resume-icon"><img src="/g/images/icons/work-64.png" width={32} height={32} alt="Work" /></div>
         <h2>Working experience</h2>
       </div>
 
@@ -26,10 +27,10 @@
       </SeeMore>
     </div>
 
-    <div class="section-block">
+    <div class="section-block" id="projects">
       <div class="title-with-icon">
-        <div class="resume-icon"><img src="/g/images/icons/work-64.png" width={28} height={28} alt="Work" /></div>
-        <h2>Competitions / Events</h2>
+        <div class="resume-icon"><img src="/g/images/icons/work-64.png" width={32} height={32} alt="Work" /></div>
+        <h2>Competitions / Projects</h2>
       </div>
 
       <SeeMore>
@@ -37,19 +38,15 @@
       </SeeMore>
     </div>
 
-    <div class="section-block">
+    <div class="section-block" id="education">
       <div class="title-with-icon">
-        <div class="resume-icon"><img src="/g/images/icons/education-64.png" width={28} height={28} alt="Education" /></div>
+        <div class="resume-icon"><img src="/g/images/icons/education-64.png" width={32} height={32} alt="Education" /></div>
         <h2>Education</h2>
       </div>
-      <div>Studying computer engineering</div>
-      <div>At Chulalongkorn University</div>
 
-      <div style="margin-top: 8px;">
-        <SeeMore>
-          <div>Hello</div>
-        </SeeMore>
-      </div>
+      <SeeMore>
+        <Education></Education>
+      </SeeMore>
     </div>
   </div>
 </div>

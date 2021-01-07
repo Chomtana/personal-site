@@ -87,7 +87,7 @@
 
       <LeftPaneNavItem>
         <div slot="icon"><img src="/g/images/icons/rank-64.png" width={36} height={36} alt="Rank" /></div>
-        <div slot="content">Competitions / Events</div>
+        <div slot="content">Competitions / Projects</div>
       </LeftPaneNavItem>
 
       <LeftPaneNavItem>

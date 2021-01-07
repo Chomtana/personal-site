@@ -38,7 +38,7 @@ import Resume from '../resume/Resume.svelte';
 </style>
 
 <svelte:head>
-	<title>Sapper project template</title>
+	<title>Chomtana Chanjaraswichai - Resume and Portfolio</title>
 </svelte:head>
 
 <Resume></Resume>
