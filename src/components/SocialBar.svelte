@@ -11,7 +11,7 @@
   }
 
   .social-button :global(*) {
-    width: inherit; 
+    width: inherit;
     height: inherit;
   }
 </style>

@@ -1,7 +1,9 @@
 <script>
 	import LeftPane from '../components/LeftPane.svelte';
 	import Nav from '../components/Nav.svelte';
-import RightPane from '../components/RightPane.svelte';
+	import RightPane from '../components/RightPane.svelte';
+
+	import Modal from '../components/Modal.svelte'
 
 	export let segment;
 </script>
@@ -28,21 +30,22 @@ import RightPane from '../components/RightPane.svelte';
 	}
 </style>
 
-<div class="w-100 h-100" style="display: flex;">
-	<div class="left-right-pane-sizer d-tablet">
-		<div class="left-right-pane-container" style="left: 0;">
-			<LeftPane></LeftPane>
+<Modal>
+	<div class="w-100 h-100" style="display: flex;">
+		<div class="left-right-pane-sizer d-tablet">
+			<div class="left-right-pane-container" style="left: 0;">
+				<LeftPane></LeftPane>
+			</div>
+		</div>
+	
+		<main style="flex-grow: 1;">
+			<slot></slot>
+		</main>
+	
+		<div class="left-right-pane-sizer d-com">
+			<div class="left-right-pane-container" style="right: 0;">
+				<RightPane></RightPane>
+			</div>
 		</div>
 	</div>
-
-	<main style="flex-grow: 1;">
-		<slot></slot>
-	</main>
-
-	<div class="left-right-pane-sizer d-com">
-		<div class="left-right-pane-container" style="right: 0;">
-			<RightPane></RightPane>
-		</div>
-	</div>
-</div>
-
+</Modal>

@@ -84,47 +84,29 @@
 <script>
   import Timeline from "../components/Timeline.svelte"
   import SeeMore from "../components/SeeMore.svelte";
-import TimelineBranch from "../components/TimelineBranch.svelte";
+  import TimelineBranch from "../components/TimelineBranch.svelte";
+  import Projects from "./Projects.svelte";
+
+  export let workings = WORKING_EXPERIENCE;
 </script>
 
 <style>
 
 </style>
 
+{#each workings as working}
+  <div class={`${working.level >= 3 ? 'above-fold' : ''}`}>
+    <Timeline level={working.level}>
+      <div class="timeline-title">{working.title}</div>
+      <div>At <a href={working.website} target="_blank">{working.at}</a></div>
+      <div>{working.from.getFullYear()} - {working.to.getFullYear() == new Date().getFullYear() ? "Now" : working.to.getFullYear()}</div>
+      <div>{@html working.note}</div>
 
-<div class="section-block">
-  <div class="title-with-icon">
-    <div class="resume-icon"><img src="/g/images/icons/work-64.png" width={28} height={28} alt="Work" /></div>
-    <h2>Working experience</h2>
+      {#if working.projects && working.projects.length > 0}
+        <SeeMore text="See projects from working..." buttonClass="projects-see-more">
+          <Projects projects={working.projects} branchMode={true}></Projects>
+        </SeeMore>
+      {/if}
+    </Timeline>
   </div>
-
-  <SeeMore>
-    {#each WORKING_EXPERIENCE as working}
-      <div class={`${working.level >= 3 ? 'above-fold' : ''}`}>
-        <Timeline level={working.level}>
-          <div class="timeline-title">{working.title}</div>
-          <div>At <a href={working.website} target="_blank">{working.at}</a></div>
-          <div>{working.from.getFullYear()} - {working.to.getFullYear() == new Date().getFullYear() ? "Now" : working.to.getFullYear()}</div>
-          <div>{@html working.note}</div>
-
-          {#if working.projects && working.projects.length > 0}
-            <SeeMore text="See projects from working..." buttonClass="projects-see-more">
-              {#each working.projects as project}
-                <div>
-                  <TimelineBranch>
-                    {#if project.website}
-                      <div class="timeline-title"><a href={project.website} target="_blank">{project.title}</a></div>
-                    {:else}
-                      <div class="timeline-title">{project.title}</div>
-                    {/if}
-                    <div>{project.description}</div>
-                  </TimelineBranch>
-                </div>
-              {/each}
-            </SeeMore>
-          {/if}
-        </Timeline>
-      </div>
-    {/each}
-  </SeeMore>
-</div>
+{/each}
