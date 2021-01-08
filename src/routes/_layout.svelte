@@ -4,6 +4,8 @@
 	import RightPane from '../components/RightPane.svelte';
 
 	import Modal from '../components/Modal.svelte'
+import TopPane from '../components/TopPane.svelte';
+import BottomPane from '../components/BottomPane.svelte';
 
 	export let segment;
 </script>
@@ -39,7 +41,15 @@
 		</div>
 	
 		<main style="flex-grow: 1;">
+			<div class="d-mobile">
+				<TopPane></TopPane>
+			</div>
+			
 			<slot></slot>
+
+			<div class="d-mobile">
+				<BottomPane></BottomPane>
+			</div>
 		</main>
 	
 		<div class="left-right-pane-sizer d-com">

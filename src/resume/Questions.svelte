@@ -23,43 +23,38 @@
   }
 </style>
 
-<div class="section-block">
-  <div class="title-with-icon">
-    <div class="resume-icon"><img src="/g/images/icons/question-64.png" width={28} height={28} alt="Question" /></div>
-    <h2>Choose your question</h2>
-  </div>
+
   
-  <div class="questions-container">
-    <div class="question-item">
-      Why you must hire me?
-    </div>
+<div class="questions-container">
+  <div class="question-item">
+    Why you must hire me?
+  </div>
 
-    <div class="question-item">
-      What are your skills?
-    </div>
+  <div class="question-item">
+    What are your skills?
+  </div>
 
-    <div class="question-item">
-      Let me see your working experience
-    </div>
+  <div class="question-item">
+    Let me see your working experience
+  </div>
 
-    <div class="question-item">
-      Where did you graduated at?
-    </div>
+  <div class="question-item">
+    Where did you graduated at?
+  </div>
 
-    <div class="question-item">
-      What is your GPA?
-    </div>
+  <div class="question-item">
+    What is your GPA?
+  </div>
 
-    <div class="question-item">
-      Have you won some competitions?
-    </div>
+  <div class="question-item">
+    Have you won some competitions?
+  </div>
 
-    <div class="question-item">
-      Do you have volunteer experience?
-    </div>
+  <div class="question-item">
+    Do you have volunteer experience?
+  </div>
 
-    <div class="question-item">
-      Do you have any open source projects?
-    </div>
+  <div class="question-item">
+    Do you have any open source projects?
   </div>
 </div>

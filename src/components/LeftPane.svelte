@@ -1,18 +1,33 @@
 <script>
   import Image from "svelte-image";
+import { resumeScrollControl } from "../utils/resumeScrollControl";
   import LeftPaneNavItem from "./LeftPaneNavItem.svelte";
   import SocialBar from "./SocialBar.svelte";
 
-  export let activePage, mobileMode;
+	let windowY, activeId = 'questions';
+
+  $: {
+    activeId = resumeScrollControl(windowY)
+    // console.log(activeId, windowY)
+  }
+
+  export let mobileMode;
 </script>
 
+<svelte:window bind:scrollY={windowY}/>
+
 <style>
-  #left-pane-container {
+  .left-pane-container {
     background-color: var(--primary);
     width: 280px;
     flex-basis: 280px;
     height: 100%;
     padding: 16px;
+  }
+
+  #chomtana.left-pane-container {
+    width: 100%;
+    background-color: var(--primary-light);
   }
 
   .myself-image-container {
@@ -53,7 +68,7 @@
   }
 </style>
 
-<div id="left-pane-container">
+<div class="left-pane-container" id={mobileMode ? "chomtana" : "left-pane-container"}>
   <div class="myself-image-container">
     <div class="myself-image">
       <Image
@@ -75,27 +90,27 @@
   <!-- Navigation pane -->
   {#if !mobileMode}
     <nav class="nav-container">
-      <LeftPaneNavItem active={true}>
+      <LeftPaneNavItem active={activeId == 'questions'} href={"#questions"}>
         <div slot="icon" class="image-circle"><img src="/g/images/icons/question-64.png" width={36} height={36} alt="Questions" /></div>
         <div slot="content">Questions</div>
       </LeftPaneNavItem>
 
-      <LeftPaneNavItem>
+      <LeftPaneNavItem active={activeId == 'working-experience'} href={"#working-experience"}>
         <div slot="icon"><img src="/g/images/icons/work-64.png" width={36} height={36} alt="Work" /></div>
         <div slot="content">Work experience</div>
       </LeftPaneNavItem>
 
-      <LeftPaneNavItem>
+      <LeftPaneNavItem active={activeId == 'projects'} href={"#projects"}>
         <div slot="icon"><img src="/g/images/icons/rank-64.png" width={36} height={36} alt="Rank" /></div>
         <div slot="content">Competitions / Projects</div>
       </LeftPaneNavItem>
 
-      <LeftPaneNavItem>
+      <LeftPaneNavItem active={activeId == 'education'} href={"#education"}>
         <div slot="icon"><img src="/g/images/icons/education-64.png" width={36} height={36} alt="Education" /></div>
         <div slot="content">Education</div>
       </LeftPaneNavItem>
 
-      <LeftPaneNavItem>
+      <LeftPaneNavItem active={activeId == 'skills'} href={"#skills"}>
         <div slot="icon"><img src="/g/images/icons/skill-64.png" width={36} height={36} alt="Skills" /></div>
         <div slot="content">Skills</div>
       </LeftPaneNavItem>

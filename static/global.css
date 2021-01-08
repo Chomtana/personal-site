@@ -5,6 +5,10 @@
 	--primary-darker: #9D800B;
 }
 
+html {
+	scroll-behavior: smooth;
+}
+
 html,body,#sapper {
 	width: 100%;
 	height: 100%;

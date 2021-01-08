@@ -12,6 +12,11 @@
   .d-tablet {
     display: none;
   }
+
+  .top-bottom-body-padding {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
 }
 
 @media (max-width: 999px) {
