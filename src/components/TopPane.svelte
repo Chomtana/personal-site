@@ -25,6 +25,8 @@
 
     background-color: var(--primary);
     border-bottom: 1px solid var(--primary-dark);
+
+    z-index: 1000;
   }
 </style>
 

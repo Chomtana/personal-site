@@ -9,6 +9,8 @@
     display: flex;
 
     flex-grow: 1;
+
+    transition: background 0.25s;
   }
 
   .item-container.active {

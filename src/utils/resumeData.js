@@ -119,6 +119,15 @@ export let COMPETITIONS = [
     reward: "Web Design & Maintenance Support",
     description: "A thailand biggest conference for python programming language",
     website: "https://2019.th.pycon.org/staff",
+    isVolunteer: true,
+    level: 2,
+  },
+  {
+    title: "Contribute to mxgraph open source",
+    description: "Help fix an issue in mxgraph open source project. Mxgraph is an open source draw.io (popular diagraming website).",
+    website: "https://github.com/jgraph/mxgraph/pull/205",
+    isOpenSource: true,
+    isVolunteer: true,
     level: 2,
   },
   {
@@ -146,6 +155,13 @@ export let COMPETITIONS = [
     title: "Data Science Hackathon 2018 by RISE",
     description: "A data science hackathon organized by RISE.",
     website: "https://www.facebook.com/datarockie/posts/2383280655018831/",
+    level: 1,
+  },
+  {
+    title: "EventX library (Archived)",
+    description: "An open source library trying to make advanced web event such as resize event write easier.",
+    website: "https://github.com/Chomtana/EventX",
+    isOpenSource: true,
     level: 1,
   },
 ]

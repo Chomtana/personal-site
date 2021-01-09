@@ -1,3 +1,15 @@
+<script>
+import { getContext } from "svelte";
+import WorkingExperience from "./WorkingExperience.svelte"
+import Education from "./Education.svelte"
+import Projects from "./Projects.svelte"
+
+import {COMPETITIONS} from "../utils/resumeData"
+
+
+  let {openModal, closeModal} = getContext('$MODAL');
+</script>
+
 <style>
   .questions-container {
     display: flex;
@@ -5,6 +17,7 @@
   }
 
   .question-item {
+    display: block;
     border-radius: 40px;
     background-color: var(--primary-dark);
     padding: 4px;
@@ -15,6 +28,8 @@
     color: white;
 
     transition: background 0.25s;
+
+    text-decoration: none;
   }
 
   .question-item:hover {
@@ -30,31 +45,31 @@
     Why you must hire me?
   </div>
 
-  <div class="question-item">
+  <a class="question-item" href="#skills">
     What are your skills?
-  </div>
+  </a>
 
-  <div class="question-item">
+  <a class="question-item" href="#working-experience">
     Let me see your working experience
-  </div>
+  </a>
 
-  <div class="question-item">
-    Where did you graduated at?
-  </div>
+  <a class="question-item" href="#education">
+    Where did you studying/graduated at?
+  </a>
 
-  <div class="question-item">
+  <div class="question-item" on:click={() => openModal('My GPA', Education)}>
     What is your GPA?
   </div>
 
-  <div class="question-item">
+  <a class="question-item" href="#projects">
     Have you won some competitions?
-  </div>
+  </a>
 
-  <div class="question-item">
+  <div class="question-item" on:click={() => openModal('Volunteer experience', Projects, {projects: COMPETITIONS.filter(c => c.isVolunteer)})}>
     Do you have volunteer experience?
   </div>
 
-  <div class="question-item">
+  <div class="question-item" on:click={() => openModal('Open source projects', Projects, {projects: COMPETITIONS.filter(c => c.isOpenSource)})}>
     Do you have any open source projects?
   </div>
 </div>

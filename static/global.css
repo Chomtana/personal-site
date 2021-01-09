@@ -91,6 +91,7 @@ code {
 
 .section-block {
 	margin-bottom: 24px;
+	padding-top: 8px;
 }
 
 .topic-block .section-block:last-child {

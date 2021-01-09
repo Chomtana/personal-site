@@ -20,9 +20,9 @@
   }
 </style>
 
-<span class={`${active ? 'below-fold-show' : ''} see-more-container`}>
+<div class={`${active ? 'below-fold-show' : ''} see-more-container`}>
   <slot></slot>
-</span>
+</div>
 
 {#if !active}
   <button class={`${buttonClass} btn btn-primary`} on:click={makeShow}>
