@@ -39,6 +39,11 @@ import Resume from '../resume/Resume.svelte';
 
 <svelte:head>
 	<title>Chomtana Chanjaraswichai - Resume and Portfolio</title>
+
+	<meta property="og:type"               content="article" />
+	<meta property="og:title"              content="Chomtana Chanjaraswichai - Resume and Portfolio" />
+	<meta property="og:description"        content="Click to see work experience, competitions, projects, education and skills of Chomtana Chanjaraswichai. Let me know if you are intersted in me!" />
+	<meta property="og:image"              content="https://chom.dev/images/myself.jpg" />
 </svelte:head>
 
 <Resume></Resume>

@@ -34,5 +34,26 @@
 	<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="global.css">
 	<link rel="stylesheet" href="utils.css">
+
+	<!-- Make bundle size smaller and not block rendering -->
+	<script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-firestore.js"></script>
+
+	<script>
+		// Your web app's Firebase configuration
+		var firebaseConfig = {
+			apiKey: "AIzaSyAjPi1UmU7YxeSGQSLacPqtK8L6Z7MBJmY",
+			authDomain: "thepinn-ieqpbu.firebaseapp.com",
+			databaseURL: "https://thepinn-ieqpbu.firebaseio.com",
+			projectId: "thepinn-ieqpbu",
+			storageBucket: "thepinn-ieqpbu.appspot.com",
+			messagingSenderId: "1058206692151",
+			appId: "1:1058206692151:web:b0f23cbbf7988a173b20b2"
+		};
+		// Initialize Firebase
+		firebase.initializeApp(firebaseConfig);
+
+		window.db = firebase.firestore();
+	</script>
 </body>
 </html>
