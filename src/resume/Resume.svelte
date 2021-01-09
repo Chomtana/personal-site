@@ -5,6 +5,7 @@
   import Timeline from "../components/Timeline.svelte"
   import WorkingExperience from "./WorkingExperience.svelte";
   import Projects from "./Projects.svelte";
+  import Skills from "./Skills.svelte";
 import Education from "./Education.svelte";
 import LeftPane from '../components/LeftPane.svelte';
 </script>
@@ -67,9 +68,7 @@ import LeftPane from '../components/LeftPane.svelte';
         <h2>Skills</h2>
       </div>
 
-      <SeeMore>
-        <Education></Education>
-      </SeeMore>
+      <Skills></Skills>
     </div>
   </div>
 </div>

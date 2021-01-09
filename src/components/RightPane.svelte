@@ -6,7 +6,7 @@
 </script>
 
 <style>
-  #left-pane-container {
+  .right-pane-container {
     background-color: var(--primary);
     width: 280px;
     flex-basis: 280px;
@@ -14,51 +14,51 @@
     padding: 16px;
   }
 
-  .myself-image-container {
-    display: flex;
-    justify-content: center;
+  .e-business-send-btn {
+    width: 100%;
   }
 
-  .myself-image :global(*) {
-    border-radius: 50%;
-    width: 160px; 
-    height: 160px;
-    object-fit: cover;
-  }
-
-  .name-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .social-container {
-    display: flex;
-    justify-content: space-around;
-  }
-
-  .social-button :global(*) {
-    width: 30px; 
-    height: 30px;
+  .send-or-view {
+    margin-bottom: 8px;
   }
 </style>
 
-<div id="left-pane-container">
-  <div class="myself-image-container">
-    <div class="myself-image">
-      <Image
-        src="/images/myself.jpg"
-        alt="Chomtana's picture"
-        width={160}
-        height={160}
-      />
-    </div>
+<div class="right-pane-container">
+  <h2>E-Business Card</h2>
+
+  <div class="send-or-view">SEND or <a href="javascript:;">VIEW MY CARD</a></div>
+
+  <div class="form-group">
+    <input class="form-control" placeholder="Full name">
   </div>
 
-  <div class="name-container">
-    <h1>Chomtana<br/>Chanjaraswichai</h1>
+  <div class="form-group">
+    <input class="form-control" placeholder="Email (Optional)">
   </div>
 
-  <SocialBar></SocialBar>
+  <div class="form-group">
+    <input class="form-control" placeholder="Mobile number (Optional)">
+  </div>
+
+  <div class="form-group">
+    <select class="form-control">
+      <option selected disabled hidden>* Choose your purpose...</option>
+      <option value="hire">Want to hire me</option>
+      <option value="find-job">Looking for job</option>
+      <option value="partner">Want to become a partner</option>
+      <option value="advertise">Advertise your company</option>
+      <option value="sell">Want to sell your product</option>
+      <option value="hello">Just want to say hello</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <div class="label">Your message</div>
+
+    <textarea class="textarea-control" placeholder="Type your message..."></textarea>
+
+    <div>* You may also leave more contacts in message box.</div>
+  </div>
+
+  <button class="btn btn-primary e-business-send-btn">Send</button>
 </div>
