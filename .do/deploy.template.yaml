@@ -1,9 +1,9 @@
 spec:
-  name: sample-html
+  name: chomtana-portfolio
   static_sites:
   - git:
-      branch: main
-      repo_clone_url: https://github.com/digitalocean/sample-html.git
-    name: sample-html
+      branch: master
+      repo_clone_url: https://github.com/Chomtana/personal-site
+    name: chomtana-portfolio
     build_command: yarn export
     source_dir: __sapper__/export
