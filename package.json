@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "sapper dev",
     "build": "sapper build --legacy",
-    "export": "sapper export --legacy & cp -r __sapper__/export public",
+    "export": "sapper export --legacy & wait & cp -r __sapper__/export public",
     "start": "node __sapper__/build"
   },
   "dependencies": {
