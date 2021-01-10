@@ -7,3 +7,4 @@ spec:
     name: chomtana-portfolio
     build_command: yarn export
     output_dir: __sapper__/export
+    
