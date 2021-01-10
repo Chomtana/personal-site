@@ -2,7 +2,7 @@
 
 Resume or Portfolio
 
-[![Deploy to DO](https://www.deploytodo.com/do-btn-blue.svg)](https://github.com/Chomtana/personal-site/tree/master)
+[![Deploy to DO](https://www.deploytodo.com/do-btn-blue.svg)](https://cloud.digitalocean.com/apps/new?repo=https://github.com/Chomtana/personal-site/tree/master)
 
 ## What I built
 A personal portfolio/resume website with custom design that help HR to do their work faster and easier due to unique QUESTIONS FEATURE that answer their question directly and with FAST PAGE LOAD SPEED they do not have to wait for long time and with DETAILED INFORMATION they know me better.
