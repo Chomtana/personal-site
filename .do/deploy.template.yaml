@@ -1,0 +1,9 @@
+spec:
+  name: sample-html
+  static_sites:
+  - git:
+      branch: main
+      repo_clone_url: https://github.com/digitalocean/sample-html.git
+    name: sample-html
+    build_command: yarn export
+    source_dir: __sapper__/export
