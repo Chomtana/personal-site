@@ -6,4 +6,4 @@ spec:
       repo_clone_url: https://github.com/Chomtana/personal-site
     name: chomtana-portfolio
     build_command: yarn export
-    source_dir: __sapper__/export
+    output_dir: __sapper__/export
