@@ -1,6 +1,14 @@
 <script>
+  import { getContext } from "svelte";
   import { messages, DIALOGFLOW_SESSION_ID } from './chatStore.js';
+  import WorkingExperience from "../resume/WorkingExperience.svelte"
+  import Education from "../resume/Education.svelte"
+  import Projects from "../resume/Projects.svelte"
+
+  import {COMPETITIONS} from "../utils/resumeData"
   import axios from 'axios';
+
+  let {openModal, closeModal} = getContext('$MODAL');
 
   let messagesValue;
 
@@ -12,15 +20,29 @@
 
   let inputMessage = "";
 
+  async function chatAction(intent) {
+    switch (intent) {
+      case 'skills': document.getElementById("skills").scrollIntoView(); break;
+      case 'working-experience': document.getElementById("working-experience").scrollIntoView(); break;
+      case 'education': document.getElementById("education").scrollIntoView(); break;
+      case 'competitions': document.getElementById("projects").scrollIntoView(); break;
+      case 'volunteer': openModal('Volunteer experience', Projects, {projects: COMPETITIONS.filter(c => c.isVolunteer)}); break;
+      case 'open-source': openModal('Open source projects', Projects, {projects: COMPETITIONS.filter(c => c.isOpenSource)}); break;
+    }
+  }
+
   async function scrollChatToBottom() {
     document.querySelectorAll(".chat-message-scrollpane").forEach(ele => ele.scroll(0, 10000))
   }
 
   async function sendMessage() {
     try {
+      let _inputMessage = inputMessage;
+      inputMessage = "";
+
       messages.update(c => [...c, {
         type: "text",
-        message: inputMessage,
+        message: _inputMessage,
         byMe: true,
       }])
 
@@ -29,7 +51,7 @@
       let response = await axios.post(CHATBOT_HOST, {
         sessionId: DIALOGFLOW_SESSION_ID,
         type: "text",
-        message: inputMessage
+        message: _inputMessage
       })
 
       let queryResult = response.data.queryResult;
@@ -44,6 +66,8 @@
       }])
 
       setTimeout(()=>scrollChatToBottom(), 250);
+
+      setTimeout(()=>chatAction(queryResult.intent.displayName), 500);
     } catch (err) {
       console.log(err);
     }
