@@ -70,6 +70,6 @@ import {COMPETITIONS} from "../utils/resumeData"
   </div>
 
   <div class="question-item" on:click={() => openModal('Open source projects', Projects, {projects: COMPETITIONS.filter(c => c.isOpenSource)})}>
-    Do you have any open source projects?
+    Do you contribute to open source projects?
   </div>
 </div>

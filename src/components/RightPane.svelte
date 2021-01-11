@@ -1,5 +1,6 @@
 <script>
   import Image from "svelte-image";
+import Chat from "./Chat.svelte";
 import EBusinessCard from "./EBusinessCard.svelte";
 </script>
 
@@ -10,9 +11,25 @@ import EBusinessCard from "./EBusinessCard.svelte";
     flex-basis: 280px;
     height: 100%;
     padding: 16px;
+
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: auto;
+  }
+
+  .chat-container {
+    overflow-y: auto;
   }
 </style>
 
 <div class="right-pane-container">
-  <EBusinessCard></EBusinessCard>
+  <div class="e-business-card-container">
+    <EBusinessCard></EBusinessCard>
+
+    <hr/>
+  </div>
+
+  <div class="chat-container">
+    <Chat></Chat>
+  </div>
 </div>
