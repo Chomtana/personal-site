@@ -6,6 +6,7 @@
 	import Modal from '../components/Modal.svelte'
 import TopPane from '../components/TopPane.svelte';
 import BottomPane from '../components/BottomPane.svelte';
+import ResumeFloatingBtn from '../resume/ResumeFloatingBtn.svelte';
 
 	export let segment;
 </script>
@@ -58,4 +59,6 @@ import BottomPane from '../components/BottomPane.svelte';
 			</div>
 		</div>
 	</div>
+
+	<ResumeFloatingBtn></ResumeFloatingBtn>
 </Modal>
