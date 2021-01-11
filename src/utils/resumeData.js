@@ -131,6 +131,19 @@ export let COMPETITIONS = [
     level: 2,
   },
   {
+    title: "dialogflow-proxy",
+    description: "An open source api application that let static site client communicate with Dialogflow to build chatbot without leaking credentials.",
+    website: "https://github.com/Chomtana/dialogflow-proxy",
+    isOpenSource: true,
+    level: 2,
+  },
+  {
+    title: "ChomChat (not yet public)",
+    description: "An chatbot building tool that let you build very complex chatbot by using just javascript knowledge and without designing any state machine.",
+    isOpenSource: true,
+    level: 2,
+  },
+  {
     title: "Christmas Codewar 2020",
     reward: "First place",
     description: "A annually speed coding competition organized by a member of PyCon Thailand community.",

@@ -65,6 +65,15 @@
         byMe: false,
       }])
 
+      window.db.collection("resume-chat").add({
+        input: {
+          sessionId: DIALOGFLOW_SESSION_ID,
+          type: "text",
+          message: _inputMessage
+        },
+        output: response.data
+      });
+
       setTimeout(()=>scrollChatToBottom(), 250);
 
       setTimeout(()=>chatAction(queryResult.intent.displayName), 500);

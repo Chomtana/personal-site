@@ -41,9 +41,9 @@ import {COMPETITIONS} from "../utils/resumeData"
 
   
 <div class="questions-container">
-  <div class="question-item">
+  <!-- <div class="question-item">
     Why you must hire me?
-  </div>
+  </div> -->
 
   <a class="question-item" href="#skills">
     What are your skills?

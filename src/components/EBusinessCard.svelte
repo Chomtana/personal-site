@@ -40,7 +40,7 @@
 <div>
   <h2>E-Business Card</h2>
 
-  <div class="send-or-view">SEND or <a href="javascript:;">VIEW MY CARD</a></div>
+  <!-- <div class="send-or-view">SEND or <a href="javascript:;">VIEW MY CARD</a></div> -->
 
   <div class="form-group">
     <input class="form-control" placeholder="Full name" bind:value={data.fullName}>
