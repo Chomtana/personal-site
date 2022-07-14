@@ -4,11 +4,19 @@ import uniq from "lodash.uniq"
 
 export let WORKING_EXPERIENCE = [
   {
+    title: "Blockchain startup entrepreneur",
+    at: "Self-initiate projects",
+    note: "",
+    from: new Date(2021, 1, 1),
+    to: new Date(),
+    level: 3,
+  },
+  {
     title: "Full stack developer",
     at: "Siamoutlet",
-    note: "(Parallel working and learning)",
+    note: "",
     from: new Date(2019, 1, 1),
-    to: new Date(),
+    to: new Date(2021, 1, 1),
     website: "https://siamoutlet.com",
     level: 3,
     projects: [
@@ -95,6 +103,22 @@ export let COMPETITIONS = [
     level: 3,
   },
   {
+    title: "Chainlink Fall Hackathon 2021",
+    reward: "Chainlink On the Rise Winners",
+    description: "A global blockchain hackathon focused on different areas including NFT",
+    website: "https://devpost.com/software/naga-product-tbd",
+    skills: ["blockchain", "solidity"],
+    level: 3,
+  },
+  {
+    title: "SCB10X Bangkok Blockathon",
+    reward: "2nd Runner Up",
+    description: "A blockchain focused hackathon organized by SCB 10X",
+    website: "https://techsauce.co/pr-news/scb-10x-bangkok-blockathon-2021-killswitch",
+    skills: ["blockchain", "solidity"],
+    level: 3,
+  },
+  {
     title: "Shopee Code League 2020 (Team xXxThailandInwZaxXx)",
     reward: "4th Place of Student Category",
     description: "The biggest 2-month online data science, data analytics and algorithm in asia.",
@@ -107,6 +131,13 @@ export let COMPETITIONS = [
     description: "A thailand chatbot competition organized by G-Able, FSTT and TOT.",
     website: "https://contest.thaifstt.org",
     level: 3,
+  },
+  {
+    title: "12th FSTT Chatbot Competition",
+    reward: "Third place",
+    description: "A thailand chatbot competition organized by G-Able, FSTT and TOT.",
+    website: "https://contest.thaifstt.org",
+    level: 2,
   },
   {
     title: "Startup Thailand League 2019",
@@ -144,6 +175,11 @@ export let COMPETITIONS = [
     level: 2,
   },
   {
+    title: "Line Hack 2020",
+    description: "A developer hackathon organized by Line in Thailand",
+    level: 2,
+  },
+  {
     title: "Christmas Codewar 2020",
     reward: "First place",
     description: "A annually speed coding competition organized by a member of PyCon Thailand community.",
@@ -165,9 +201,40 @@ export let COMPETITIONS = [
     level: 2,
   },
   {
+    title: "CIMB 3D Hackathon 2018",
+    description: "A software development hackathon organized by CIMB at Singapore",
+    website: "https://github.com/Chomtana/phone-movement-cimb-2018",
+    level: 1,
+  },
+  {
     title: "Data Science Hackathon 2018 by RISE",
     description: "A data science hackathon organized by RISE.",
     website: "https://www.facebook.com/datarockie/posts/2383280655018831/",
+    level: 1,
+  },
+  {
+    title: "งานศิลปหัตถกรรมนักเรียน สาขาเขียนโปรแกรมคอมพิวเตอร์",
+    description: "High school coding competition",
+    level: 1,
+  },
+  {
+    title: "งานศิลปหัตถกรรมนักเรียน สาขาเขียนโปรแกรมคอมพิวเตอร์",
+    description: "High school coding competition",
+    level: 1,
+  },
+  {
+    title: "งานศิลปหัตถกรรมนักเรียน สาขาเขียนโปรแกรมคอมพิวเตอร์",
+    description: "High school coding competition",
+    level: 1,
+  },
+  {
+    title: "งานศิลปหัตถกรรมนักเรียน สาขาโครงงานคอมพิวเตอร์",
+    description: "High school software development project competition",
+    level: 1,
+  },
+  {
+    title: "งานศิลปหัตถกรรมนักเรียน สาขาโครงงานวิทยาศาสตร์",
+    description: "High school scientific project competition",
     level: 1,
   },
   {
